@@ -18,9 +18,13 @@ def mask_account_card(input_string: str) -> str:
     return f'}{sys_pay}, {mask_number}'
 
 
-
-    pass
-
-def get_date(date_string: str) -> str:
+def get_date(input_date: str) -> str:
     '''Возфращаем формат даты согласно заданию'''
-    pass
+    try:
+        dt_in = datetime.fromisoformat(input_date)
+        # Форматируем в нужный вид
+        format_date = dt_in.strftime("%d.%m.%Y")
+        return format_date
+    except ValueError as e:
+        raise ValueError(
+            f"Некорректный формат даты: {input_date}. Ожидаемый формат: 'ГГГГ-ММ-ДДТЧЧ:ММ:СС.мммммм'") from e
