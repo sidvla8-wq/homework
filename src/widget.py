@@ -27,4 +27,4 @@ def get_date(input_date: str) -> str:
         return format_date
     except ValueError as e:
         raise ValueError(
-            f"Некорректный формат даты: {input_date}. Ожидаемый формат: 'ГГГГ-ММ-ДДТЧЧ:ММ:СС.мммммм'") from e
+            f'Некорректный формат даты: {input_date}. Ожидаемый формат: "ГГГГ-ММ-ДДТЧЧ:ММ:СС.мммммм"') from e

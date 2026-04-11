@@ -13,7 +13,7 @@ def get_mask_account(account: str) -> str:
     """Функция маскировки номера банковского счёта"""
     acnt = account.replace(" ", "")
     if not acnt.isdigit():
-        return "Счёт должен состоять из цифр"
+        return "Счёт должен состоять из цифр!"
     if len(acnt) != 20:
         return "Счёт не равен 20 цифрам"
     mask_account = "**" + acnt[-4:]
