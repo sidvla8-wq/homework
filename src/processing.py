@@ -15,6 +15,6 @@ def sort_by_date(filt_operation: list[dict], reverse: bool = True) -> list[dict]
         try:
             return datetime.strptime(date_s, "%Y-%m-%d").date()
         except ValueError:
-            return datetime.min # Возвращает минимальную дату
+            return datetime.min  # Возвращает минимальную дату
 
     return sorted(filt_operation, key=lambda x: sort_date(x.get("date", "")), reverse=reverse)
