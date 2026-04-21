@@ -15,12 +15,13 @@ def sort_by_date(filt_operation: list[dict], reverse: bool = True) -> list[dict]
     """Функция сортировки по дате"""
 
     if not isinstance(filt_operation, list):
-        raise TypeError("должен быть списком")
+        raise TypeError("filt_operation должен быть списком")
 
     def parse_date(date_str):
         """Парсит строку даты в объект datetime. Поддерживает несколько форматов."""
         formats = [
-            "%Y-%m-%dT%H:%M:%S",  # ISO формат: 2023-01-01T10:00:00
+            "%Y-%m-%dT%H:%M:%S.%f",  # ISO с дробными секундами: 2023-01-01T10:00:00.123456
+            "%Y-%m-%dT%H:%M:%S",  # ISO без дробных секунд: 2023-01-01T10:00:00
             "%Y-%m-%d %H:%M:%S",  # Пробел вместо T: 2023-01-01 10:00:00
             "%Y-%m-%d",  # Только дата: 2023-01-01
         ]
