@@ -8,8 +8,8 @@ from src.widget import get_date, mask_account_card
 @pytest.mark.parametrize(
     "input_str, expected",
     [
-        ("Visa Platinum 7000792289606361", "Visa Platinum 7000 79** ****6361"),
-        ("Maestro 7000792289606361", "Maestro 7000 79** ****6361"),
+        ("Visa Platinum 7000792289606361", "Visa Platinum 7000 79** **** 6361"),
+        ("Maestro 7000792289606361", "Maestro 7000 79** **** 6361"),
         ("Счёт 73654108430135874305", "Счёт **4305"),
         ("", "Введена пустая строка"),
     ],
