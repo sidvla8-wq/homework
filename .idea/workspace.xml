@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,15 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests for test_processing.test_sort_by_date_descending.test_sort_by_date_invalid_type.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_card_number_generator_default.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_card_number_generator_range.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_card_number_generator_single.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_filter_by_curreency_eur.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_filter_by_currency_empty.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_filter_by_currency_gbp.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_filter_by_currency_rub.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_filter_by_currency_usd.executor": "Run",
+    "Python tests.Python tests for tests.test_generators.test_transaction_descriptions.executor": "Run",
     "Python tests.Python tests for tests.test_masks.test_get_mask_account.executor": "Run",
     "Python tests.Python tests for tests.test_masks.test_get_mask_card_number.executor": "Run",
     "Python tests.Python tests for tests.test_processing.test_filter_by_state.executor": "Run",
@@ -55,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/test__homework",
+    "git-widget-placeholder": "feature/generators__homework",
     "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   }
 }]]></component>
@@ -67,8 +75,8 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_processing.test_filter_by_state">
-    <configuration name="Python tests for test_processing.test_sort_by_date_descending.test_sort_by_date_invalid_type" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_generators.test_card_number_generator_single">
+    <configuration name="Python tests for tests.test_generators.test_card_number_generator_default" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,11 +88,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_processing.test_sort_by_date_descending.test_sort_by_date_invalid_type&quot;" />
+      <option name="_new_target" value="&quot;tests.test_generators.test_card_number_generator_default&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_masks.test_get_mask_account" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_generators.test_card_number_generator_range" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,11 +104,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_masks.test_get_mask_account&quot;" />
+      <option name="_new_target" value="&quot;tests.test_generators.test_card_number_generator_range&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_processing.test_filter_by_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_generators.test_card_number_generator_single" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,11 +120,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_processing.test_filter_by_state&quot;" />
+      <option name="_new_target" value="&quot;tests.test_generators.test_card_number_generator_single&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_processing.test_sort_by_date_ascending" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_generators.test_filter_by_currency_empty" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,11 +136,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_processing.test_sort_by_date_ascending&quot;" />
+      <option name="_new_target" value="&quot;tests.test_generators.test_filter_by_currency_empty&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_processing.test_sort_by_date_descending" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_generators.test_transaction_descriptions" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,17 +152,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_processing.test_sort_by_date_descending&quot;" />
+      <option name="_new_target" value="&quot;tests.test_generators.test_transaction_descriptions&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.test_processing.test_filter_by_state" />
-        <item itemvalue="Python tests.Python tests for tests.test_processing.test_sort_by_date_ascending" />
-        <item itemvalue="Python tests.Python tests for tests.test_processing.test_sort_by_date_descending" />
-        <item itemvalue="Python tests.Python tests for test_processing.test_sort_by_date_descending.test_sort_by_date_invalid_type" />
-        <item itemvalue="Python tests.Python tests for tests.test_masks.test_get_mask_account" />
+        <item itemvalue="Python tests.Python tests for tests.test_generators.test_card_number_generator_single" />
+        <item itemvalue="Python tests.Python tests for tests.test_generators.test_card_number_generator_range" />
+        <item itemvalue="Python tests.Python tests for tests.test_generators.test_card_number_generator_default" />
+        <item itemvalue="Python tests.Python tests for tests.test_generators.test_transaction_descriptions" />
+        <item itemvalue="Python tests.Python tests for tests.test_generators.test_filter_by_currency_empty" />
       </list>
     </recent_temporary>
   </component>
