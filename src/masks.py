@@ -5,7 +5,7 @@ def get_mask_card_number(card_number: str) -> str:
         return "Номер карты должен состоять из цифр!"
     if len(card) != 16:
         return "Номер карты не содержит 16 цифр"
-    mask_card = card[:4] + " " + card[4:6] + "**" + " " + "****" + card[-4:]
+    mask_card = card[:4] + " " + card[4:6] + "**" + " " + "****" + " " + card[-4:]
     return mask_card
 
 
