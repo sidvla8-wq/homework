@@ -16,7 +16,8 @@ def transaction_discriptions(transactions: list(dict)) -> iter:
 
 
 def card_number_generator(started: int = 1, stop: int = 9999999999999999) -> iter:
-    """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX, где X — цифра номера карты."""
+    """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX,
+    где X — цифра номера карты."""
     for num in range(started, stop + 1):
         card_str = f"{num:016d}"
         formatted_card = f"{card_str[:4]} {card_str[4:8]} {card_str[8:12]} {card_str[12:16]}"

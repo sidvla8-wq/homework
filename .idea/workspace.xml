@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_widget.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
