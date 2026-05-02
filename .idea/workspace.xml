@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +95,8 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_with_file">
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_function_with_arguments" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_decorators.TestLogDecorator">
+    <configuration name="Python tests for tests.test_decorators.TestLogDecorator" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,7 +108,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_function_with_arguments&quot;" />
+      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_file_encoding" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_file_encoding&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -124,22 +141,6 @@
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_function_with_exception_with_file&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_function_with_exception_without_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="homework" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_function_with_exception_without_file&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -177,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator" />
+        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_file_encoding" />
         <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_with_file" />
         <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_without_file" />
         <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_function_with_exception_with_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_function_with_exception_without_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_function_with_arguments" />
       </list>
     </recent_temporary>
   </component>
