@@ -20,18 +20,18 @@
 
 import json
 import os
-from typing import List, Dict
+from typing import Dict, List
+
 
 def load_transactions(operations: str) -> List[Dict]:
-    '''Загружает данные о финансовых транзакциях из JSON-файла'''
+    """Загружает данные о финансовых транзакциях из JSON-файла"""
     # Проверяем существование файла
     if not os.path.exists(operations):
         raise FileNotFoundError(f"Файл {operations} не найден")
 
     try:
-        with open(operations, 'r', encoding='utf-8') as f:
+        with open(operations, "r", encoding="utf-8") as f:
             data = json.load(f)  # Корректный вызов json.load()
-
 
         # Проверяем, что данные — список
         if isinstance(data, list):
