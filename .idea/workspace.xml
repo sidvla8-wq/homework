@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/operations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/external_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_functions_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +108,8 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list">
-    <configuration name="Python tests for tests.test_functions_api.test_convert_to_rubles_no_rate" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_functions_api.test_load_transactions_file_not_found">
+    <configuration name="Python tests for tests.test_functions_api.test_convert_to_rubles_usd" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,7 +121,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_functions_api.test_convert_to_rubles_no_rate&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_convert_to_rubles_usd&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -196,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list" />
-        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_invalid_json" />
         <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_file_not_found" />
         <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_success" />
-        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_no_rate" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_invalid_json" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_usd" />
       </list>
     </recent_temporary>
   </component>
