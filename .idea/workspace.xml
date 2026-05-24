@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="" />
+    <list default="true" id="5df66b16-fd74-4f4e-ae8a-23292590b7ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,12 +25,12 @@
     &quot;assignee&quot;: &quot;sidvla8-wq&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:sidvla8-wq/homework.git",
-    "accountId": "dd34526d-a462-48f9-8449-dd91ecf839dc"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:sidvla8-wq/homework.git&quot;,
+    &quot;accountId&quot;: &quot;dd34526d-a462-48f9-8449-dd91ecf839dc&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -58,6 +60,19 @@
     "Python tests.Python tests for tests.test_decorators.test_log_file_exception.executor": "Run",
     "Python tests.Python tests for tests.test_decorators.test_log_file_success.executor": "Run",
     "Python tests.Python tests for tests.test_decorators.test_log_with_kwargs.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.TestExternalAPI.test_convert_to_rubles_no_rate.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.TestExternalAPI.test_convert_to_rubles_usd.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.TestUtils.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.TestUtils.test_load_transactions_file_not_found.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.TestUtils.test_load_transactions_success.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_eur.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_no_rate.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_rub.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_usd.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_load_transactions_file_not_found.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_load_transactions_invalid_json.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list.executor": "Run",
+    "Python tests.Python tests for tests.test_functions_api.test_load_transactions_success.executor": "Run",
     "Python tests.Python tests for tests.test_generators.test_card_number_generator_default.executor": "Run",
     "Python tests.Python tests for tests.test_generators.test_card_number_generator_range.executor": "Run",
     "Python tests.Python tests for tests.test_generators.test_card_number_generator_single.executor": "Run",
@@ -77,6 +92,7 @@
     "Python tests.Python tests for tests.test_processing.test_sort_by_date_descending.executor": "Run",
     "Python tests.Python tests for tests.test_widget.test_get_date.executor": "Run",
     "Python tests.Python tests for tests.test_widget.test_mask_account_card.executor": "Run",
+    "Python tests.Python tests in test_functions_api.py.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -92,8 +108,8 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_decorators.TestLogDecorator">
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list">
+    <configuration name="Python tests for tests.test_functions_api.test_convert_to_rubles_no_rate" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,11 +121,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_convert_to_rubles_no_rate&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_file_encoding" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_functions_api.test_load_transactions_file_not_found" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,11 +137,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_file_encoding&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_load_transactions_file_not_found&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_function_with_exception_with_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_functions_api.test_load_transactions_invalid_json" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,11 +153,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_function_with_exception_with_file&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_load_transactions_invalid_json&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_with_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_functions_api.test_load_transactions_not_a_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,11 +169,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_successful_function_execution_with_file&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_load_transactions_not_a_list&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_without_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_functions_api.test_load_transactions_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="homework" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,17 +185,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_decorators.TestLogDecorator.test_successful_function_execution_without_file&quot;" />
+      <option name="_new_target" value="&quot;tests.test_functions_api.test_load_transactions_success&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_file_encoding" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_with_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_successful_function_execution_without_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_decorators.TestLogDecorator.test_function_with_exception_with_file" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_not_a_list" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_invalid_json" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_file_not_found" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_load_transactions_success" />
+        <item itemvalue="Python tests.Python tests for tests.test_functions_api.test_convert_to_rubles_no_rate" />
       </list>
     </recent_temporary>
   </component>
