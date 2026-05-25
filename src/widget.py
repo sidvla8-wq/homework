@@ -17,7 +17,7 @@ def mask_account_card(input_string: str) -> str:
 
     else:
         mask_number = get_mask_account(number)
-    return f"{sys_pay}, {mask_number}"
+    return f"{sys_pay} {mask_number}"
 
 
 def get_date(input_date: str) -> str:
