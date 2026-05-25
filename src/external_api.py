@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_URL = "https://api.exchangeratesapi.io/latest"
+API_URL = "https://api.exchangerate.host/latest"
 API_KEY = os.getenv("EXCHANGE_RATE_API_KEY")
 
 
