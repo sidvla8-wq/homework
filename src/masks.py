@@ -1,19 +1,23 @@
-from log_config import setup_logger
+from src.logging_config import setup_logger, masks_logger
 
 # Создаём логгер для модуля masks
-logger = setup_logger(__name__, 'masks.log')
+logger = setup_logger('masks')
 
 # Пример использования логгера
 def apply_mask(data):
-    logger.info("Применяем маску к данным")
     try:
-        # Логика применения маски
-        result = data
-        logger.debug("Маска успешно применена")
+        masks_logger.info(f"Начинаем маскирование данных: {data}")
+        # Логика маскирования
+        result = f"***{data[-4:]}"
+        masks_logger.info(f"Маскирование завершено успешно. Результат: {result}")
         return result
     except Exception as e:
-        logger.error(f"Ошибка при применении маски: {e}")
+        masks_logger.error(f"Ошибка при маскировании данных: {e}")
         raise
+
+# Пример использования
+if __name__ == "__main__":
+    apply_mask("1234567890123456")
 
 
 def get_mask_card_number(card_number: str) -> str:
