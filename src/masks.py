@@ -1,7 +1,8 @@
-from src.logging_config import setup_logger, masks_logger
+from src.logging_config import masks_logger, setup_logger
 
 # Создаём логгер для модуля masks
-logger = setup_logger('masks')
+logger = setup_logger("masks")
+
 
 # Пример использования логгера
 def apply_mask(data):
@@ -14,6 +15,7 @@ def apply_mask(data):
     except Exception as e:
         masks_logger.error(f"Ошибка при маскировании данных: {e}")
         raise
+
 
 # Пример использования
 if __name__ == "__main__":

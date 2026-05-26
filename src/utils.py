@@ -1,7 +1,9 @@
 import json
 import os
 from typing import Dict, List
-from src.logging_config import setup_logger, utils_logger
+
+from src.logging_config import utils_logger
+
 
 # Создаём логгер для модуля utils
 def validate_input(value):
@@ -14,6 +16,7 @@ def validate_input(value):
         return False
     utils_logger.info("Входные данные прошли валидацию")
     return True
+
 
 def process_data(data):
     try:
@@ -28,6 +31,7 @@ def process_data(data):
     except Exception as e:
         utils_logger.error(f"Ошибка при обработке данных: {e}")
         raise
+
 
 # Пример использования
 if __name__ == "__main__":
