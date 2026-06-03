@@ -46,36 +46,6 @@ def sort_by_date(data: list[dict], ascending: bool = True) -> list[dict]:
     return sorted(data, key=get_date_key, reverse=not ascending)
 
 
-# def filter_ruble_transactions(data: list[dict]) -> list[dict]:
-#     """Фильтрация рублёвых транзакций с учётом сложной структуры данных."""
-#     ruble_indicators = ["руб", "rub", "rur", "₽"]
-#     result = []
-#
-#     for op in data:
-#         currency_found = False
-#
-#         if "operationAmount" in op and isinstance(op["operationAmount"], dict):
-#             currency_info = op["operationAmount"].get("currency", {})
-#             if isinstance(currency_info, dict):
-#                 currency_name = currency_info.get("name", "").lower()
-#                 if any(indicator in currency_name for indicator in ruble_indicators):
-#                     currency_found = True
-#
-#         if not currency_found and "amount" in op:
-#             amount_str = str(op["amount"]).lower()
-#             if any(indicator in amount_str for indicator in ruble_indicators):
-#                 currency_found = True
-#
-#         if not currency_found and "description" in op:
-#             desc_str = str(op["description"]).lower()
-#             if any(indicator in desc_str for indicator in ruble_indicators):
-#                 currency_found = True
-#
-#         if currency_found:
-#             result.append(op)
-#     return result
-
-
 def filter_ruble_transactions(data: list[dict]) -> list[dict]:
     """Фильтрация рублёвых транзакций с учётом разных форматов данных."""
     ruble_indicators = ["руб", "rub", "rur", "₽"]
