@@ -1,3 +1,4 @@
+import datetime
 import re
 from collections import Counter
 from typing import Any, Dict, List
@@ -42,9 +43,22 @@ def filter_by_status(data: List[Dict[str, Any]], status: str) -> List[Dict[str, 
     return [t for t in data if t.get("status", "").upper() == target_status]
 
 
-def sort_by_date(data: List[Dict[str, Any]], ascending: bool = True) -> List[Dict[str, Any]]:
-    """Сортировка транзакций по дате"""
-    return sorted(data, key=lambda x: x.get("date", ""), reverse=not ascending)
+def sort_by_date(transactions: list[dict], ascending: bool = True) -> list[dict]:
+    """Сортирует транзакции по дате с поддержкой разных форматов."""
+
+    def parse_date(date_str):
+        date_formats = ["%Y-%m-%d", "%d.%m.%Y", "%Y/%m/%d", "%m/%d/%Y"]
+        for fmt in date_formats:
+            try:
+                return datetime.strptime(date_str, fmt)
+            except ValueError:
+                continue
+        return datetime.min  # Если формат не распознан
+
+    # Фильтруем транзакции с корректной датой
+    valid_transactions = [t for t in transactions if t.get("date")]
+    sorted_transactions = sorted(valid_transactions, key=lambda x: parse_date(x["date"]), reverse=not ascending)
+    return sorted_transactions
 
 
 def filter_ruble_transactions(data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:

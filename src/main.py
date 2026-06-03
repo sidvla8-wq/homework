@@ -1,133 +1,183 @@
-from typing import Any, Dict, List
+import os
 
 from bank_operations import filter_by_status, filter_ruble_transactions, process_bank_search, sort_by_date
 from data_loader import load_csv_data, load_json_data, load_xlsx_data
 
 
-def load_data_from_file(choice: str) -> List[Dict[str, Any]]:
-    """Загрузка данных из файла выбранного формата"""
-    file_path = input("Введите путь к файлу: ")
-    try:
-        if choice == "1":
-            print("Для обработки выбран JSON-файл.")
-            return load_json_data(file_path)
-        elif choice == "2":
-            print("Для обработки выбран CSV-файл.")
-            return load_csv_data(file_path)
-        elif choice == "3":
-            print("Для обработки выбран XLSX-файл.")
-            return load_xlsx_data(file_path)
+def get_file_path(file_type: str) -> str:
+    """Получение пути к файлу в папке data с проверкой существования"""
+    base_path = "data"
+
+    # Создаём папку data, если её нет
+    if not os.path.exists(base_path):
+        os.makedirs(base_path)
+        print(f"Программа: Создана папка '{base_path}' для хранения файлов.")
+
+    max_attempts = 3
+    attempt = 0
+
+    while attempt < max_attempts:
+        attempt += 1
+        filename = input(f"Введите имя {file_type}‑файла (без пути): ").strip()
+
+        # Проверяем, что имя файла не пустое
+        if not filename:
+            print("Программа: Имя файла не может быть пустым. Попробуйте ещё раз.")
+            continue
+
+        # Добавляем расширение, если его нет
+        if not filename.lower().endswith(f".{file_type}"):
+            filename += f".{file_type}"
+
+        full_path = os.path.join(base_path, filename)
+
+        # Проверяем существование файла
+        if os.path.exists(full_path):
+            print(f"Программа: Файл найден: {full_path}")
+            return full_path
         else:
-            raise ValueError("Неверный выбор формата файла")
-    except Exception as e:
-        print(f"Ошибка при загрузке файла: {e}")
-        return []
+            remaining = max_attempts - attempt
+            if remaining > 0:
+                print(f"Программа: Файл '{full_path}' не найден.")
+                print(f"Программа: У вас осталось {remaining} попыток.")
+                # Показываем содержимое папки для справки
+                if os.listdir(base_path):
+                    print(f"Программа: Содержимое папки '{base_path}':")
+                    for f in os.listdir(base_path):
+                        print(f"  - {f}")
+                else:
+                    print(f"Программа: Папка '{base_path}' пуста.")
+            else:
+                raise FileNotFoundError(f"Файл '{full_path}' не найден после {max_attempts} попыток.")
+
+    raise FileNotFoundError("Превышено количество попыток ввода имени файла.")
 
 
-def get_valid_status() -> str:
-    """Получение корректного статуса от пользователя с повторным запросом при ошибке"""
-    valid_statuses = ["EXECUTED", "CANCELED", "PENDING"]
+def get_status() -> str:
+    """Получение статуса от пользователя с валидацией"""
+    allowed_statuses = ["EXECUTED", "CANCELED", "PENDING"]
     while True:
-        status = (
-            input(
-                "Введите статус, по которому необходимо выполнить фильтрацию.\n"
-                "Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING\n"
-            )
-            .strip()
-            .upper()
-        )
-        if status in valid_statuses:
-            print(f'Операции отфильтрованы по статусу "{status}"')
-            return status
-        else:
-            print(f'Статус операции "{status}" недоступен.')
+        status = input(
+            "Программа: Введите статус, по которому необходимо выполнить фильтрацию.\n"
+            f"Доступные для фильтровки статусы: {', '.join(allowed_statuses)}\n"
+        ).strip()
+        if status.upper() in allowed_statuses:
+            return status.upper()
+        print(f"Программа: Статус операции '{status}' недоступен.")
 
 
-def get_sort_parameters() -> tuple[bool, bool]:
-    """Получение параметров сортировки от пользователя"""
-    sort_choice = input("Отсортировать операции по дате? Да/Нет\n").strip().lower()
-    if sort_choice in ["да", "yes", "y"]:
-        order_choice = input("Отсортировать по возрастанию или по убыванию?\n").strip().lower()
-        ascending = order_choice in ["по возрастанию", "возрастание", "asc", "ascending"]
-        return True, ascending
-    return False, True
+def get_yes_no_input(prompt: str) -> bool:
+    """Получение ответа 'да/нет' от пользователя"""
+
+    def get_yes_no_input(prompt: str) -> bool:
+        """Получение ответа 'да/нет' от пользователя с обработкой опечаток"""
+        yes_variants = ["да", "yes", "y", "д", "lf"]
+        no_variants = ["нет", "no", "n", "н", "yz"]
+
+        while True:
+            response = input(prompt).strip().lower()
+            # Обработка распространённых опечаток
+            if "возраст" in response or "asc" in response:
+                return True
+            elif "убыв" in response or "desc" in response:
+                return False
+
+            if response in yes_variants:
+                return True
+            elif response in no_variants:
+                return False
+            else:
+                print("Пожалуйста, ответьте 'да' или 'нет' (или 'y'/'n').")
 
 
-def should_filter_ruble() -> bool:
-    """Запрос на фильтрацию рублёвых транзакций"""
-    choice = input("Выводить только рублевые транзакции? Да/Нет\n").strip().lower()
-    return choice in ["да", "yes", "y"]
-
-
-def get_search_term() -> str:
-    """Получение строки для поиска в описании"""
-    search_choice = (
-        input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет\n").strip().lower()
-    )
-    if search_choice in ["да", "yes", "y"]:
-        return input("Введите строку для поиска: ").strip()
-    return ""
-
-
-def format_operation(operation: Dict[str, Any]) -> str:
-    """Форматирование операции для вывода в консоль"""
-    date = operation.get("date", "Не указана")
-    desc = operation.get("description", "Без описания")
-    amount = operation.get("amount", "Не указана")
-    account_from = operation.get("from", "")
-    account_to = operation.get("to", "")
-
-    formatted = f"{date} {desc}\n"
-    if account_from or account_to:
-        from_part = account_from if account_from else "Не указан"
-        to_part = account_to if account_to else "Не указан"
-        formatted += f"{from_part} -> {to_part}\n"
-    formatted += f"Сумма: {amount}\n"
-    return formatted
+def format_transaction(transaction: dict) -> str:
+    """Форматирование транзакции для вывода"""
+    date = transaction.get("date", "N/A")
+    description = transaction.get("description", "N/A")
+    account = transaction.get("account", "N/A")
+    amount = transaction.get("amount", "N/A")
+    return f"{date} {description}\n{account}\nСумма: {amount}\n"
 
 
 def main():
-    """Основная функция программы"""
+    """Основная функция программы для работы с банковскими транзакциями."""
     print("Привет! Добро пожаловать в программу работы с банковскими транзакциями.")
     print("Выберите необходимый пункт меню:")
     print("1. Получить информацию о транзакциях из JSON-файла")
     print("2. Получить информацию о транзакциях из CSV-файла")
     print("3. Получить информацию о транзакциях из XLSX-файла")
 
-    # Выбор формата файла
-    file_choice = input().strip()
-    data = load_data_from_file(file_choice)
+    # Цикл для валидации выбора меню
+    while True:
+        choice = input("Ваш выбор: ").strip()
 
-    if not data:
-        print("Не удалось загрузить данные. Завершение работы.")
+        if choice in ["1", "2", "3"]:
+            break
+        else:
+            print("Неверный выбор. Пожалуйста, введите 1, 2 или 3.")
+
+    transactions = []
+
+    # Загрузка данных в зависимости от выбора пользователя
+    try:
+        if choice == "1":
+            print("Для обработки выбран JSON-файл.")
+            file_path = get_file_path("json")
+            transactions = load_json_data(file_path)
+        elif choice == "2":
+            print("Для обработки выбран CSV-файл.")
+            file_path = get_file_path("csv")
+            transactions = load_csv_data(file_path)
+        elif choice == "3":
+            print("Для обработки выбран XLSX-файл.")
+            file_path = get_file_path("xlsx")
+            transactions = load_xlsx_data(file_path)
+    except FileNotFoundError:
+        print("Файл не найден. Проверьте путь и имя файла.")
+        return
+    except Exception as e:
+        print(f"Ошибка при загрузке данных: {e}")
         return
 
     # Фильтрация по статусу
-    status = get_valid_status()
-    filtered_data = filter_by_status(data, status)
+    status = get_status()
+    print(f'Операции отфильтрованы по статусу "{status}"')
+    transactions = filter_by_status(transactions, status)
 
     # Сортировка по дате
-    sort_needed, ascending = get_sort_parameters()
-    if sort_needed:
-        filtered_data = sort_by_date(filtered_data, ascending)
+    if get_yes_no_input("Программа: Отсортировать операции по дате? Да/Нет\n"):
+        while True:
+            order = input("Программа: Отсортировать по возрастанию или по убыванию?\n").strip().lower()
+            if "возраста" in order:
+                ascending = True
+                break
+            elif "убыва" in order:
+                ascending = False
+                break
+            else:
+                print("Программа: Пожалуйста, введите 'по возрастанию' или 'по убыванию'.")
+        transactions = sort_by_date(transactions, ascending=ascending)
 
     # Фильтрация рублёвых транзакций
-    if should_filter_ruble():
-        filtered_data = filter_ruble_transactions(filtered_data)
+    if get_yes_no_input("Выводить только рублевые транзакции? Да/Нет\n"):
+        transactions = filter_ruble_transactions(transactions)
 
-    # Поиск по строке в описании
-    search_term = get_search_term()
-    if search_term:
-        filtered_data = process_bank_search(filtered_data, search_term)
+    # Поиск по описанию
+    if get_yes_no_input("Отфильтровать список транзакций по определённому слову в описании? Да/Нет\n"):
+        search_term = input("Введите слово для поиска в описании:\n").strip()
+        if search_term:
+            transactions = process_bank_search(transactions, search_term)
 
-    # Вывод результатов
+    # Вывод результата
     print("Распечатываю итоговый список транзакций...")
-    if not filtered_data:
+
+    if not transactions:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
     else:
-        print(f"\nВсего банковских операций в выборке: {len(filtered_data)}\n")
-        for i, operation in enumerate(filtered_data, 1):
-            print(f"{i}. {format_operation(operation)}")
+        print(f"Всего банковских операций в выборке: {len(transactions)}\n")
+        for transaction in transactions:
+            formatted = format_transaction(transaction)
+            print(formatted)
 
 
 if __name__ == "__main__":
