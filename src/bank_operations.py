@@ -122,3 +122,52 @@ def analyze_operations(data: list[dict]) -> dict:
         "currency_distribution": dict(currency_counts),
         "top_descriptions": description_counts,
     }
+
+
+def format_date(date_str: str) -> str:
+    """Преобразует дату из формата ISO в DD.MM.YYYY."""
+    try:
+        # Убираем временную зону и дробные секунды, если есть
+        clean_date = date_str.split("Z")[0].split(".")[0]
+        dt = datetime.strptime(clean_date, "%Y-%m-%dT%H:%M:%S")
+        return dt.strftime("%d.%m.%Y")
+    except (ValueError, TypeError):
+        return "N/A"
+
+
+def mask_card_number(card_info: str) -> str:
+    """Маскирует номер карты в формате 'XXXX XX** **** XXXX'."""
+    # Извлекаем только цифры
+    digits = "".join(filter(str.isdigit, card_info))
+
+    if len(digits) != 16:
+        return card_info  # Возвращаем как есть, если не 16 цифр
+
+    # Маска: первые 4 + пробел + следующие 4 + пробел + **** + пробел + последние 4
+    masked = f"{digits[:4]} {digits[4:6]}** **** {digits[-4:]}"
+    # Добавляем тип карты, если он есть в исходной строке
+    card_type = card_info.split()[0] if card_info.split() else ""
+    if card_type in ["Visa", "MasterCard", "Maestro"]:
+        return f"{card_type} {masked}"
+    return masked
+
+
+def mask_account_number(account_info: str) -> str:
+    """Маскирует номер счёта, показывая **ХХХХ"""
+    # Извлекаем только цифры
+    digits = "".join(filter(str.isdigit, account_info))
+
+    if not digits:
+        return account_info
+
+    # Показываем только последние 4 цифры, остальное заменяем на *
+    if len(digits) > 4:
+        masked = "**" + digits[-4:]
+    else:
+        masked = digits
+
+    # Сохраняем префикс, если есть (Счёт, Card и тд)
+    prefix = " ".join(word for word in account_info.split() if not word.isdigit())
+    if prefix:
+        return f"{prefix} {masked}"
+    return masked
