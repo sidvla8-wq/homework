@@ -135,39 +135,47 @@ def format_date(date_str: str) -> str:
         return "N/A"
 
 
-def mask_card_number(card_info: str) -> str:
+def mask_card_number(card_info: str | float | None) -> str:
     """Маскирует номер карты в формате 'XXXX XX** **** XXXX'."""
-    # Извлекаем только цифры
-    digits = "".join(filter(str.isdigit, card_info))
+    if not card_info or isinstance(card_info, (float, int)):
+        return "N/A"
+
+    # Преобразуем в строку и извлекаем только цифры
+    card_str = str(card_info)
+    digits = "".join(filter(str.isdigit, card_str))
 
     if len(digits) != 16:
         return card_info  # Возвращаем как есть, если не 16 цифр
 
-    # Маска: первые 4 + пробел + следующие 4 + пробел + **** + пробел + последние 4
+    # Маска для вывода карты в формате 0000 00** **** 0000
     masked = f"{digits[:4]} {digits[4:6]}** **** {digits[-4:]}"
     # Добавляем тип карты, если он есть в исходной строке
-    card_type = card_info.split()[0] if card_info.split() else ""
-    if card_type in ["Visa", "MasterCard", "Maestro"]:
+    card_type = card_str.split()[0] if card_str.split() else ""
+    if card_type in ["Visa", "MasterCard", "Maestro", "American Express", "Discover"]:
         return f"{card_type} {masked}"
     return masked
 
 
-def mask_account_number(account_info: str) -> str:
+def mask_account_number(account_info: str | float | None) -> str:
     """Маскирует номер счёта, показывая **ХХХХ"""
+    if not account_info or isinstance(account_info, (float, int)):
+        return "N/A"
+
     # Извлекаем только цифры
-    digits = "".join(filter(str.isdigit, account_info))
+    account_str = str(account_info)
+    digits = "".join(filter(str.isdigit, account_str))
 
     if not digits:
-        return account_info
+        return account_str
 
-    # Показываем только последние 4 цифры, остальное заменяем на *
+    # Показываем только на ** и последние 4 цифры
     if len(digits) > 4:
         masked = "**" + digits[-4:]
     else:
         masked = digits
 
     # Сохраняем префикс, если есть (Счёт, Card и тд)
-    prefix = " ".join(word for word in account_info.split() if not word.isdigit())
+    prefix = " ".join(word for word in account_str.split() if not word.isdigit())
     if prefix:
         return f"{prefix} {masked}"
     return masked

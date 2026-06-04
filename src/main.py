@@ -107,46 +107,6 @@ def main():
     if not filtered_data:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
     else:
-        # print("Распечатываю итоговый список транзакций...")
-        # print(f"Всего банковских операций в выборке: {len(filtered_data)}")
-        # for i, operation in enumerate(filtered_data, 1):
-        #     # Извлекаем дату
-        #     date = operation.get("date", "N/A")
-        #
-        #     # Извлекаем описание
-        #     description = operation.get("description", "N/A")
-        #
-        #     # Извлекаем сумму — с учётом разных форматов данных
-        #     amount = "N/A"
-        #
-        #     # 1. Для JSON: берём из operationAmount.amount
-        #     if "operationAmount" in operation and isinstance(operation["operationAmount"], dict):
-        #         amount = operation["operationAmount"].get("amount", "N/A")
-        #
-        #     # 2. Для CSV: берём из поля amount
-        #     elif "amount" in operation:
-        #         amount = operation["amount"]
-        #
-        #     # Извлекаем валюту — с учётом разных форматов данных
-        #     currency = "N/A"
-        #
-        #     # 1. Для JSON: берём из operationAmount.currency.name
-        #     if (
-        #         "operationAmount" in operation
-        #         and isinstance(operation["operationAmount"], dict)
-        #         and "currency" in operation["operationAmount"]
-        #         and isinstance(operation["operationAmount"]["currency"], dict)
-        #     ):
-        #         currency = operation["operationAmount"]["currency"].get("name", "N/A")
-        #     # 2. Для CSV: берём из currency_name
-        #     elif "currency_name" in operation:
-        #         currency = operation["currency_name"]
-        #     # 3. Для CSV: берём из currency_code
-        #     elif "currency_code" in operation:
-        #         currency = operation["currency_code"]
-        #
-        #     print(f"\n{i}. {date} — {description}")
-        #     print(f"Сумма: {amount} {currency}")
         print("Распечатываю итоговый список транзакций...")
         print(f"Всего банковских операций в выборке: {len(filtered_data)}")
 
